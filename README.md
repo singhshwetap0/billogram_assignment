@@ -1,4 +1,4 @@
-This repo is mainely to generate coupan codes for brand and providing it to the logged in user and then update the same coupan code availablity in the system
+This repo is mainly to generate coupon codes for brand and providing it to the logged in user and then update the same coupon code availablity in the system
 
 Prerequisites:
 
@@ -25,16 +25,16 @@ Install python-3.9 Follow the steps from the below reference document based on y
 Try opening http://localhost:8000 in the browser. Now you are good to go.
 
 # Endpoints -
-1. Coupan code generation: 
+1. Coupon code generation: 
     http://localhost:8000/brand-discount
-3. Retrive coupan code: 
+3. Retrive coupon code: 
     http://localhost:8000/brand-discount?user=shweta&brand=Zara
 
 
 # API Specification
 
 Allowed HTTPs requests:
-POST    : Create X no of coupan codes for a given brand
-GET     : When user request coupan code for a brand this request will give coupan code if available 
+POST    : Create X no of coupon codes for a given brand
+GET     : When user request coupon code for a brand this request will give coupon code if available 
 
 
