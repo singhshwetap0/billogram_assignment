@@ -12,12 +12,8 @@ sudo pip3 install virtualenv
 # Create virtual environment
 virtualenv thanos
 
-cd thanos
-
 # Activate virtual environment
 source bin/activate
-
-cd billogram_discount_code/discount_code
 
 # install requirements.txt
 pip3 install -r requirements.txt
