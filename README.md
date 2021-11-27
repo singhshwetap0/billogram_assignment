@@ -2,12 +2,12 @@ This repo is mainely to generate coupan codes for brand and providing it to the 
 
 Prerequisites:
 
-Install Pip & Python -
+Install Pip3 & Python3 -
 Install python-3.9 Follow the steps from the below reference document based on your Operating System. Reference: https://docs.python-guide.org/starting/installation/
 
 Setup virtual environment- 
 # Install virtual environment
-sudo pip install virtualenv
+sudo pip3 install virtualenv
 
 # Create virtual environment
 virtualenv thanos
@@ -23,14 +23,14 @@ cd billogram_discount_code/discount_code
 pip3 install -r requirements.txt
 
 # Run the server
-python manage.py runserver 8000
+python3 manage.py runserver 8000
 
-# your server is up on port 8001
-Try opening http://localhost:8091 in the browser. Now you are good to go.
+# your server is up on port 8000
+Try opening http://localhost:8000 in the browser. Now you are good to go.
 
 Endpoint -
-Coupan code generation: http://localhost:8091/brand-discount
-Retrive coupan code: http://localhost:8091/brand-discount?user=shweta&brand=Zara
+Coupan code generation: http://localhost:8000/brand-discount
+Retrive coupan code: http://localhost:8000/brand-discount?user=shweta&brand=Zara
 
 
 API Specification - 
