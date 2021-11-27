@@ -7,19 +7,19 @@ Install python-3.9 Follow the steps from the below reference document based on y
 
 # Setup virtual environment- 
 - Install virtual environment
-sudo pip3 install virtualenv
+`code`sudo pip3 install virtualenv
 
 - Create virtual environment
-    virtualenv billogram
+    `code`virtualenv billogram
 
 - Activate virtual environment
-    source bin/activate
+    `code`source bin/activate
 
 - install requirements.txt
-    pip3 install -r requirements.txt
+    `code`pip3 install -r requirements.txt
 
 - Run the server
-    python3 manage.py runserver 8000
+    `code`python3 manage.py runserver 8000
 
 # your server is up on port 8000
 Try opening http://localhost:8000 in the browser. Now you are good to go.
