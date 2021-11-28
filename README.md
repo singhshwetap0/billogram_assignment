@@ -40,6 +40,8 @@ GET     : When user request coupon code for a brand this request will give coupo
 
 
 
+# Flow chart
+
 ![alt text](https://github.com/singhshwetap0/billogram_assignment/blob/main/images/coupon_service_flow_chart.png?raw=true)
 
 
