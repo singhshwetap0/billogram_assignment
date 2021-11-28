@@ -12,7 +12,7 @@ from app.config import BRAND_MAPPING, FILENAME
 from app.utility import generate_coupon_code
 
 from app.exception import ValueTooSmallError
-
+from app.tasks import update_csv
 
 coupon_data = []
 
@@ -20,9 +20,15 @@ coupon_data = []
 @method_decorator(csrf_exempt, name='dispatch')
 class CouponCodeGeneration(View):
 
-    """" This class is mainly used to create coupon codes and retrieve code by user """
-
     def post(self, request):
+        """"This function generates X no of coupon codes for a given brand
+
+        :param self: instance of the class used to update the status
+        :brand name
+        :coupon count
+
+        """
+
         coupon_data = []
         data = json.loads(request.body.decode("utf-8"))
         brand_name = data.get('brand')
@@ -54,9 +60,13 @@ class CouponCodeGeneration(View):
                 writer.writerows(coupon_data)
 
             fd.close()
-            return JsonResponse({"message": "Coupon code has been generated successfully"}, status=201)
+            return JsonResponse({"message": "Coupon code has been generated successfully", "status": 201})
 
     def get(self, request):
+        """"This function retrieve coupon code and update the status and user id into file
+        :param: user id
+        :brand name
+        """
         user = request.GET.get('user')
         brand = request.GET.get('brand')
 
@@ -66,17 +76,15 @@ class CouponCodeGeneration(View):
         coupon_pd = pd.read_csv(FILENAME)
         ccode_ind = coupon_pd.loc[(coupon_pd.Brand == brand)
                                   & (coupon_pd.Status == False)]
-
+        coupon_code = ""
         if not ccode_ind.empty:
             ind = ccode_ind.index[ccode_ind["Status"] == False].tolist()[
                 0]
             tmp_pd = ccode_ind.iloc[0]
             coupon_code = str(tmp_pd.CouponCode)
-            coupon_pd.at[ind, 'Status'] = True
-            coupon_pd.at[ind, 'UserId'] = user
-            coupon_pd.to_csv(FILENAME, index=False)
+            d = {'Status': True, 'UserID': user}
+            update_csv.apply_async((ind, d), countdown=10)
+            return JsonResponse({"coupon_code": coupon_code, "status": 200})
 
         else:
-            return JsonResponse({"message": "No Coupon code available"})
-
-        return JsonResponse({"coupon_code": coupon_code})
+            return JsonResponse({"message": "No Coupon code available", "coupon_code": coupon_code, "status": 200})

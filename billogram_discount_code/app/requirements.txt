@@ -1,3 +1,5 @@
 pandas
 djangorestframework
 pylint
+rabbitmq
+celery
