@@ -35,6 +35,11 @@ Try opening http://localhost:8000 in the browser. Now you are good to go.
 
 Allowed HTTPs requests:
 POST    : Create X no of coupon codes for a given brand
-GET     : When user request coupon code for a brand this request will give coupon code if available 
+GET     : When user request coupon code for a brand this request will give coupon code if available
+
+
+
+
+![alt text](https://github.com/singhshwetap0/billogram_assignment/blob/main/images/coupon_service_flow_chart.png?raw=true)
 
 
