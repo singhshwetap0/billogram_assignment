@@ -35,7 +35,7 @@ Try opening http://localhost:8000 in the browser. Now you are good to go.
 
 # Allowed HTTPs requests:
 1. POST    : Create X no of coupon codes for a given brand
-2. GET     : When user request coupon code for a brand this request will give coupon code if available
+2. GET     : When user request coupon code for a brand this request will retieve coupon code if available and update the same in the db
 
 
 
