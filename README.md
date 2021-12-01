@@ -33,9 +33,9 @@ Try opening http://localhost:8000 in the browser. Now you are good to go.
 
 # API Specification
 
-Allowed HTTPs requests:
-POST    : Create X no of coupon codes for a given brand
-GET     : When user request coupon code for a brand this request will give coupon code if available
+# Allowed HTTPs requests:
+1. POST    : Create X no of coupon codes for a given brand
+2. GET     : When user request coupon code for a brand this request will give coupon code if available
 
 
 
